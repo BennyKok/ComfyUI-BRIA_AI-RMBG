@@ -40,8 +40,8 @@ class BRIA_RMBG_ModelLoader_Zho:
   
     def load_model(self):
         net = BriaRMBG()
-        model_path = os.path.join(current_directory, "RMBG-1.4/model.pth", weights_only=False)
-        net.load_state_dict(torch.load(model_path, map_location=device))
+        model_path = os.path.join(current_directory, "RMBG-1.4/model.pth")
+        net.load_state_dict(torch.load(model_path, map_location=device, weights_only=False))
         net.to(device)
         net.eval() 
         return [net]
